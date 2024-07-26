@@ -22,7 +22,7 @@ const NameType = () => {
             <br></br>
             <TypeAnimation
               sequence={[
-                "randy",
+                "Randy",
                 1000,
                 "a UBC Engineering Student",
                 1000,
