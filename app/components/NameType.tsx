@@ -16,7 +16,7 @@ const NameType = () => {
           className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
         >
           <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-7xl lg:leading-normal font-extrabold">
-            <span className="text-white bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
+            <span className="text-white bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
               I&apos;m{" "}
             </span>
             <br></br>
@@ -37,10 +37,9 @@ const NameType = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-            <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-                UBC Engineering 27'
-            </p>
-            Hi, I'm Randy! I am an electrical engineering student at UBC and a software developer that loves to inovate!
+            <span className="block">UBC Engineering 27'</span>
+            Hi, I'm Randy! I am an electrical engineering student at UBC and a
+            software developer that loves to inovate!
           </p>
           <div>
             <Link
