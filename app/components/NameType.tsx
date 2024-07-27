@@ -1,10 +1,19 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
 const NameType = () => {
+  const [isFirstLoad, setIsFirstLoad] = useState(true);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsFirstLoad(false);
+    }, 3000);
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
     <section className="lg:py-16 flex justify-center items-center">
       <div className="grid grid-cols-1 text-center">
@@ -19,7 +28,7 @@ const NameType = () => {
             <TypeAnimation
               sequence={[
                 "Randy",
-                1000,
+                isFirstLoad ? 1800 : 1000, // Stay on "Randy" for 3 seconds on first load
                 "an engineering student",
                 1000,
                 "a full stack developer",
