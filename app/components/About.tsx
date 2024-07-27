@@ -2,6 +2,7 @@
 import React, { useTransition, useState } from "react";
 import TabButton from "./TabButton";
 import Skill from "./Skill"; // Import the Skill component
+import Media from "./Media"; // Import Media component
 
 const TAB_DATA = [
   {
@@ -45,13 +46,13 @@ const TAB_DATA = [
     id: "education",
     content: (
       <div className="text-left">
-        <p className="text-[white] text-2xl">
+        <p className="text-[white] text-2xl tracking-wider">
           University of British Columbia
         </p>
         <p className="text-[#ededfd] text-base">
           Bachelor&apos;s of Applied Science in Electrical Engineering
         </p>
-        <p className="text-[white]">
+        <p className="text-[#8b94c1]">
           Vancouver, BC, Canada · Sept 2023 - Apr 2027 (Expected)
         </p>
       </div>
@@ -72,31 +73,29 @@ const About: React.FC = () => {
   return (
     <section className="text-white" id="about">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <div className="flex justify-center items-center w-full h-full bg-gray-800 rounded-lg p-4">
-          <span className="text-8xl">😊</span>
+        <div className="flex flex-col min-w-[300px] mx-auto">
+          <img
+            src="/images/myself.png"
+            alt="image of myself"
+            className="rounded-full w-[300px] h-[300px]"
+          />
+          <div className="flex mx-auto mt-5">
+            <Media />
+          </div>
         </div>
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
-          <p className="text-base lg:text-1lg">
-            Hi! I&apos;m Randy Ren, a second-year student at the University of British Columbia pursuing a Bachelor&apos;s degree in Engineering. I am passionate about software development and machine learning. I also enjoy participating in hackathons and running track and field. I am always eager to learn new technologies and collaborate with others to create innovative solutions.
+          <p className="text-base lg:text-lg">
+            Hi! My name is Randy and I'm currently a second-year student at the University of British Columbia pursuing a Bachelor's degree in Engineering. I also enjoy hackathons and run track and field.
           </p>
           <div className="flex flex-row justify-start mt-8">
-            <TabButton
-              selectTab={() => handleTabChange("skills")}
-              active={tab === "skills"}
-            >
+            <TabButton selectTab={() => handleTabChange("skills")} active={tab === "skills"}>
               Skills
             </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("frameworks-tools")}
-              active={tab === "frameworks-tools"}
-            >
+            <TabButton selectTab={() => handleTabChange("frameworks-tools")} active={tab === "frameworks-tools"}>
               Frameworks and Tools
             </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("education")}
-              active={tab === "education"}
-            >
+            <TabButton selectTab={() => handleTabChange("education")} active={tab === "education"}>
               Education
             </TabButton>
           </div>
