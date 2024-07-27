@@ -2,6 +2,7 @@ import NameType from "./components/NameType";
 import NavBar from "./components/NavBar";
 import About from "./components/About";
 import ProjectsSection from "./components/ProjectSection";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -11,6 +12,11 @@ export default function Home() {
         <NameType />
         <About />
         <ProjectsSection/>
+      </div>
+      <div>
+        <footer className="Py-4 flex justify-center pb-8 relative z-10">
+          <Footer/>
+        </footer>
       </div>
     </main>
   );
