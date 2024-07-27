@@ -24,7 +24,7 @@ const NameType = () => {
               sequence={[
                 "Randy",
                 1000,
-                "a UBC Engineering Student",
+                "an engineering student",
                 1000,
                 "a full stack developer",
                 1000,
