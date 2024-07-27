@@ -1,6 +1,7 @@
 import NameType from "./components/NameType";
 import NavBar from "./components/NavBar";
 import About from "./components/About";
+import ProjectsSection from "./components/ProjectSection";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <div className="mt-24 container mx-auto py-4 px-12">
         <NameType />
         <About />
+        <ProjectsSection/>
       </div>
     </main>
   );
