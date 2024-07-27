@@ -51,7 +51,7 @@ const TAB_DATA = [
         <p className="text-[#ededfd] text-base">
           Bachelor&apos;s of Applied Science in Electrical Engineering
         </p>
-        <p className="text-[#8b94c1]">
+        <p className="text-[white]">
           Vancouver, BC, Canada · Sept 2023 - Apr 2027 (Expected)
         </p>
       </div>
