@@ -19,10 +19,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <div>
-      <div
-        className="h-52 md:h-72 rounded-t-xl relative group overflow-hidden"
-        style={{ background: `url(${imgUrl})`, backgroundSize: "cover" }}
-      >
+      <div className="h-52 md:h-72 rounded-t-xl relative group overflow-hidden">
+        <img
+          src={imgUrl}
+          alt={title}
+          className="w-full h-full object-cover object-center"
+        />
         <div className="overlay items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500">
           <Link
             href={gitUrl}
