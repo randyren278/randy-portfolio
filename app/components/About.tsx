@@ -49,10 +49,10 @@ const TAB_DATA = [
         <p className="text-[white] text-2xl tracking-wider">
           University of British Columbia
         </p>
-        <p className="text-[#ededfd] text-base">
+        <p className="text-[white] text-base">
           Bachelor&apos;s of Applied Science in Electrical Engineering
         </p>
-        <p className="text-[#8b94c1]">
+        <p className="text-[white]">
           Vancouver, BC, Canada · Sept 2023 - Apr 2027 (Expected)
         </p>
       </div>

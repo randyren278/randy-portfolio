@@ -1,19 +1,10 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
 const NameType = () => {
-  const [isFirstLoad, setIsFirstLoad] = useState(true);
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setIsFirstLoad(false);
-    }, 3000);
-    return () => clearTimeout(timeout);
-  }, []);
-
   return (
     <section className="lg:py-16 flex justify-center items-center">
       <div className="grid grid-cols-1 text-center">
@@ -28,7 +19,7 @@ const NameType = () => {
             <TypeAnimation
               sequence={[
                 "Randy",
-                isFirstLoad ? 1800 : 1000, // Stay on "Randy" for 3 seconds on first load
+                3000,
                 "an engineering student",
                 1000,
                 "a full stack developer",
@@ -46,19 +37,17 @@ const NameType = () => {
             <span className="block">UBC Engineering 27'</span>
             Hi, I'm Randy! I am an electrical engineering student at UBC and a
             software developer that loves to innovate!
-            </p>
+          </p>
           <div>
             <Link
               href="mailto:randyren278@gmail.com"
-              className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-800 to-purple-600 hover:bg-slate-200 text-white"
+              className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-800 to-purple-600 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-800 hover:scale-105 transition-transform duration-200 text-white"
             >
               Hire Me
             </Link>
             <Link
-              href="/resume.pdf"
-              className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-blue-800 via-blue-500 to-purple-600 hover:bg-slate-800 text-white mt-3"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/resume.pdf" // Update this with your resume link
+              className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-blue-800 via-blue-500 to-purple-600 hover:bg-gradient-to-br hover:from-purple-600 hover:via-blue-500 hover:to-blue-800 hover:scale-105 transition-transform duration-200 text-white mt-3"
             >
               <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
                 Resume
