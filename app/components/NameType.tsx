@@ -25,7 +25,7 @@ const NameType = () => {
           className="place-self-center"
         >
           <div className="h-48 flex items-center justify-center relative">
-            <h1 className="text-white mb-4 text-6xl sm:text-6xl lg:text-7xl lg:leading-normal font-extrabold z-10">
+            <h1 className="text-white mb-4 text-4xl sm:text-4xl lg:text-7xl lg:leading-normal font-extrabold z-10">
               <span className="text-white">I'm </span>
               <span className="text-transparent bg-clip-text bg-image-text">
                 Randy Ren
