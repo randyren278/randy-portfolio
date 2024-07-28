@@ -123,7 +123,7 @@ const About: React.FC = () => {
   ));
 
   return (
-    <div className="w-full h-full py-20">
+    <div id="about" className="w-full h-full py-20">
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
