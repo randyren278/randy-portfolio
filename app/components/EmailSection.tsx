@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 
 const EmailSection = () => {
-  const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const [buttonText, setButtonText] = useState("Send Message");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -11,6 +11,10 @@ const EmailSection = () => {
       subject: { value: string };
       message: { value: string };
     };
+
+    // Set button to "Sending..."
+    setButtonText("Sending...");
+
     const data = {
       email: target.email.value,
       subject: target.subject.value,
@@ -36,24 +40,24 @@ const EmailSection = () => {
 
       if (response.status === 200) {
         console.log("Message sent.");
-        setEmailSubmitted(true);
+        setButtonText("Message sent!");
 
-        // Clear the form inputs after a delay
+        // Clear the form inputs right away
+        target.email.value = "";
+        target.subject.value = "";
+        target.message.value = "";
+
+        // Switch back to "Send Message" after 2 seconds
         setTimeout(() => {
-          target.email.value = "";
-          target.subject.value = "";
-          target.message.value = "";
-
-          // Switch back to "Send Message" after another delay
-          setTimeout(() => {
-            setEmailSubmitted(false);
-          }, 2000);
-        }, 2000); // Adjust the delay as needed
+          setButtonText("Send Message");
+        }, 2000);
       } else {
         console.error("Failed to send message:", resData);
+        setButtonText("Send Message");
       }
     } catch (error) {
       console.error("Error sending message:", error);
+      setButtonText("Send Message");
     }
   };
 
@@ -87,9 +91,7 @@ const EmailSection = () => {
               type="email"
               id="email"
               required
-              className={`bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-sm rounded-lg block w-full p-2.5 transition-colors duration-1000 ${
-                emailSubmitted ? "text-transparent" : "text-gray-100"
-              }`}
+              className={`bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-sm rounded-lg block w-full p-2.5 transition-opacity duration-500 opacity-100`}
               placeholder="abc@email.com"
             />
           </div>
@@ -105,9 +107,7 @@ const EmailSection = () => {
               type="text"
               id="subject"
               required
-              className={`bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-sm rounded-lg block w-full p-2.5 transition-colors duration-1000 ${
-                emailSubmitted ? "text-transparent" : "text-gray-100"
-              }`}
+              className={`bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-sm rounded-lg block w-full p-2.5 transition-opacity duration-500 opacity-100`}
               placeholder="Just saying hi"
             />
           </div>
@@ -121,17 +121,17 @@ const EmailSection = () => {
             <textarea
               name="message"
               id="message"
-              className={`bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-sm rounded-lg block w-full p-2.5 transition-colors duration-1000 ${
-                emailSubmitted ? "text-transparent" : "text-gray-100"
-              }`}
+              className={`bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-sm rounded-lg block w-full p-2.5 transition-opacity duration-500 opacity-100`}
               placeholder="Let's talk about..."
             />
           </div>
           <button
             type="submit"
-            className="bg-gradient-to-br from-blue-800 to-purple-600 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-800 text-white font-medium py-2.5 px-5 rounded-lg w-full transition-opacity duration-1000"
+            className="inline-block py-0.5 px-0.5 rounded-full bg-gradient-to-br bg-neutral-400 hover:bg-neutral-200 hover:scale-105 transition-transform duration-200 text-white"
           >
-            {emailSubmitted ? "Message sent!" : "Send Message"}
+            <span className="block bg-[#121212] hover:bg-neutral-900 rounded-full px-5 py-2 text-center">
+              {buttonText}
+            </span>
           </button>
         </form>
       </div>
