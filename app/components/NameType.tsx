@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { SparklesCore } from "./sparkles";
 
 const NameType = () => {
   const [isFirstLoad, setIsFirstLoad] = useState(true);
@@ -15,7 +16,7 @@ const NameType = () => {
   }, []);
 
   return (
-    <section className="lg:py-16 flex justify-center items-center font-sans">
+    <section className="lg:py-16 flex flex-col items-center justify-center font-sans">
       <div className="grid grid-cols-1 text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
@@ -23,31 +24,53 @@ const NameType = () => {
           transition={{ duration: 0.5 }}
           className="place-self-center"
         >
-          <div className="h-48 flex items-center justify-center">
-            <h1 className="text-white mb-4 text-6xl sm:text-6xl lg:text-7xl lg:leading-normal font-extrabold">
-              <span className="text-white">I'm{" "}</span>
+          <div className="h-48 flex items-center justify-center relative">
+            <h1 className="text-white mb-4 text-6xl sm:text-6xl lg:text-7xl lg:leading-normal font-extrabold z-10">
+              <span className="text-white">I'm </span>
               <span className="text-transparent bg-clip-text bg-image-text">
                 Randy Ren
               </span>
             </h1>
           </div>
-          <p className="text-neutral-100 text-base sm:text-lg mb-6 lg:text-xl">
+          <div className="relative w-[40rem] h-40 mt-[-4.40rem] mb-10">
+            {/* Gradients */}
+            <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-neutral-400 to-transparent h-[2px] w-3/4 blur-sm z-0" />
+            <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-neutral-400 to-transparent h-px w-3/4 z-0" />
+            <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-neutral-500 to-transparent h-[5px] w-1/4 blur-sm z-0" />
+            <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-neutral-500 to-transparent h-px w-1/4 z-0" />
+
+            {/* Core component */}
+            <SparklesCore
+              background="transparent"
+              minSize={0.4}
+              maxSize={1}
+              particleDensity={1200}
+              className="w-full h-full z-0"
+              particleColor="#FFFFFF"
+            />
+
+            {/* Radial Gradient to prevent sharp edges */}
+            <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)] z-0"></div>
+          </div>
+          <p className="text-neutral-300 text-base sm:text-lg mb-6 lg:text-0xl">
             <span className="block">UBC Engineering 27'</span>
           </p>
-          <div>
+          <div className="flex flex-row items-center justify-center gap-4">
             <Link
               href="mailto:randyren278@gmail.com"
-              className="px-0.5 inline-block py-0.5 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br bg-neutral-50 hover:bg-neutral-200 hover:scale-105 transition-transform duration-200 text-white"
+              className="inline-block py-0.5 px-0.5 rounded-full bg-gradient-to-br bg-neutral-400 hover:bg-neutral-200 hover:scale-105 transition-transform duration-200 text-white"
+              style={{ width: "100px" }}
             >
-              <span className="block bg-[#121212] hover:bg-neutral-900 rounded-full px-5 py-2">
+              <span className="block bg-[#121212] hover:bg-neutral-900 rounded-full px-5 py-2 text-center">
                 Hire Me
               </span>
             </Link>
             <Link
               href="/randyresume.pdf" // Update this with your resume link
-              className="px-0.5 inline-block py-0.5 w-full sm:w-fit rounded-full bg-gradient-to-br bg-neutral-50 via-blue-500  hover:bg-neutral-200 hover:scale-105 transition-transform duration-200 text-white mt-3"
+              className="inline-block py-0.5 px-0.5 rounded-full bg-gradient-to-br bg-neutral-400 hover:bg-neutral-200 hover:scale-105 transition-transform duration-200 text-white"
+              style={{ width: "100px" }}
             >
-              <span className="block bg-[#121212] hover:bg-neutral-900 rounded-full px-5 py-2">
+              <span className="block bg-[#121212] hover:bg-neutral-900 rounded-full px-5 py-2 text-center">
                 Resume
               </span>
             </Link>
