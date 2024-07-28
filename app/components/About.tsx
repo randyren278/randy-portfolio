@@ -47,7 +47,7 @@ const data = [
     src: "/images/carousel2.png", // Placeholder image, replace with your desired image
     content: (
       <DummyContent>
-        <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-xl font-bold font-sans">
+        <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-xl font-sans">
           Hi! My name is Randy and I'm currently a second-year student at the University of British Columbia pursuing a Bachelor's degree in Engineering. I also enjoy hackathons and run track and field.
         </p>
       </DummyContent>
@@ -102,13 +102,13 @@ const data = [
     content: (
       <DummyContent>
         <div className="text-left">
-          <p className="text-[white] text-xl font-bold font-sans">
+          <p className="text-neutral-600 dark:text-neutral-50 md:text-xl font-bold font-sans">
             University of British Columbia
           </p>
-          <p className="text-[white] text-base font-sans">
+          <p className="text-neutral-600 dark:text-neutral-400 md:text-xl font-sans">
             Bachelor&apos;s of Applied Science in Electrical Engineering
           </p>
-          <p className="text-[white] text-base font-sans">
+          <p className="text-neutral-600 dark:text-neutral-400 md:text-xl font-sans">
             Vancouver, BC, Canada · Sept 2023 - Apr 2027 (Expected)
           </p>
         </div>
