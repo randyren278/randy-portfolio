@@ -56,7 +56,7 @@ const NameType = () => {
               Hire Me
             </Link>
             <Link
-              href="/resume.pdf" // Update this with your resume link
+              href="/randyresume.pdf" // Update this with your resume link
               className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-blue-800 via-blue-500 to-purple-600 hover:bg-gradient-to-br hover:from-purple-600 hover:via-blue-500 hover:to-blue-800 hover:scale-105 transition-transform duration-200 text-white mt-3"
             >
               <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
