@@ -1,10 +1,11 @@
 // src/components/ProjectCard.tsx
 import React, { useState } from "react";
-import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faGlobeAmericas } from "@fortawesome/free-solid-svg-icons"; // Updated globe icon
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { CanvasRevealEffect } from "./canvas-reveal-effect";
-import { Icon } from "./Icon";
 
 type ProjectCardProps = {
   title: string;
@@ -52,19 +53,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <h5 className="text-xl font-semibold mb-2">{title}</h5>
         <p className="text-[#ADB7BE]">{description}</p>
       </div>
-      <div className="relative z-20 mt-4 flex justify-center">
+      <div className="relative z-20 mt-4 flex justify-center gap-4">
         <Link
           href={gitUrl}
-          className="h-14 w-14 mr-2 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link"
+          className="text-[#ADB7BE] hover:text-white"
         >
-          <CodeBracketIcon className="h-10 w-10 text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group-hover/link:text-white" />
+          <FontAwesomeIcon icon={faGithub} size="2x" />
         </Link>
         {previewUrl && (
           <Link
             href={previewUrl}
-            className="h-14 w-14 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link"
+            className="text-[#ADB7BE] hover:text-white"
           >
-            <EyeIcon className="h-10 w-10 text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group-hover/link:text-white" />
+            <FontAwesomeIcon icon={faGlobeAmericas} size="2x" />
           </Link>
         )}
       </div>
