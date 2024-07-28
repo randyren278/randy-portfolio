@@ -31,23 +31,23 @@ const NameType = () => {
               </span>
             </h1>
           </div>
-          <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
+          <p className="text-neutral-100 text-base sm:text-lg mb-6 lg:text-xl">
             <span className="block">UBC Engineering 27'</span>
           </p>
           <div>
             <Link
               href="mailto:randyren278@gmail.com"
-              className="px-1 inline-block py-1 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-800 to-purple-600 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-800 hover:scale-105 transition-transform duration-200 text-white"
+              className="px-0.5 inline-block py-0.5 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br bg-neutral-50 hover:bg-neutral-200 hover:scale-105 transition-transform duration-200 text-white"
             >
-              <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
+              <span className="block bg-[#121212] hover:bg-neutral-900 rounded-full px-5 py-2">
                 Hire Me
               </span>
             </Link>
             <Link
               href="/randyresume.pdf" // Update this with your resume link
-              className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-blue-800 via-blue-500 to-purple-600 hover:bg-gradient-to-br hover:from-purple-600 hover:via-blue-500 hover:to-blue-800 hover:scale-105 transition-transform duration-200 text-white mt-3"
+              className="px-0.5 inline-block py-0.5 w-full sm:w-fit rounded-full bg-gradient-to-br bg-neutral-50 via-blue-500  hover:bg-neutral-200 hover:scale-105 transition-transform duration-200 text-white mt-3"
             >
-              <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
+              <span className="block bg-[#121212] hover:bg-neutral-900 rounded-full px-5 py-2">
                 Resume
               </span>
             </Link>
