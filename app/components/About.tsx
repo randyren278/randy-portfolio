@@ -15,7 +15,7 @@ const TAB_DATA = [
         <Skill imageURL="/images/cpp.png" text="C++" />
         <Skill imageURL="/images/js.png" text="JavaScript" />
         <Skill imageURL="/images/ts.png" text="TypeScript" />
-        <Skill imageURL="/images/sql.png" text="SQL" />
+        <Skill imageURL="/images/SQL.png" text="SQL" />
         <Skill imageURL="/images/html.png" text="HTML5" />
         <Skill imageURL="/images/css.png" text="CSS3" />
       </div>
@@ -33,11 +33,11 @@ const TAB_DATA = [
         <Skill imageURL="/images/git.png" text="Git" />
         <Skill imageURL="/images/github.png" text="GitHub" />
         <Skill imageURL="/images/aws.png" text="AWS" />
-        <Skill imageURL="/images/mongodb.png" text="MongoDB" />
+        <Skill imageURL="/images/mongoDB.png" text="MongoDB" />
         <Skill imageURL="/images/figma.png" text="Figma" />
         <Skill imageURL="/images/blender.png" text="Blender" />
         <Skill imageURL="/images/web3.png" text="Web3" />
-        <Skill imageURL="/images/fusion360.png" text="Fusion360" />
+        <Skill imageURL="/images/Fusion360.png" text="Fusion360" />
       </div>
     ),
   },
