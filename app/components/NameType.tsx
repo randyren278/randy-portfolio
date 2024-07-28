@@ -53,9 +53,11 @@ const NameType = () => {
           <div>
             <Link
               href="mailto:randyren278@gmail.com"
-              className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-800 to-purple-600 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-800 hover:scale-105 transition-transform duration-200 text-white"
+              className="px-1 inline-block py-1 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-800 to-purple-600 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-800 hover:scale-105 transition-transform duration-200 text-white"
             >
-              Hire Me
+              <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
+                Hire Me
+              </span>
             </Link>
             <Link
               href="/randyresume.pdf" // Update this with your resume link
