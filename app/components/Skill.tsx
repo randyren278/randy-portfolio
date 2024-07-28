@@ -17,7 +17,7 @@ const Skill: React.FC<SkillProps> = ({ imageURL, text }) => {
         )}
         <Image src={imageURL} alt={text} width={40} height={40} className="relative" />
       </div>
-      <span className="text-white mt-2">{text}</span>
+      <span className="text-white mt-2 font-sans">{text}</span>
     </div>
   );
 };

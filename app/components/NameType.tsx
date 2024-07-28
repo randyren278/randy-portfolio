@@ -16,7 +16,7 @@ const NameType = () => {
   }, []);
 
   return (
-    <section className="lg:py-16 flex justify-center items-center">
+    <section className="lg:py-16 flex justify-center items-center font-sans">
       <div className="grid grid-cols-1 text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}

@@ -4,7 +4,7 @@ import { TbMail } from "react-icons/tb";
 
 const Media = () => {
   return (
-    <div className="flex space-x-2">
+    <div className="flex space-x-2 font-sans">
       <a href="mailto:randyren278@gmail.com">
         <TbMail className="text-white w-10 h-10 mx-1 cursor-pointer transition-transform duration-200 transform hover:scale-110 hover:text-white hover:bg-clip-text " />
       </a>
