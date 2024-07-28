@@ -32,7 +32,7 @@ const NameType = () => {
               </span>
             </h1>
           </div>
-          <div className="relative w-[40rem] h-40 mt-[-4.40rem] mb-10">
+          <div className="relative w-[40rem] h-40 mt-[-4.30rem] mb-10">
             {/* Gradients */}
             <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-neutral-400 to-transparent h-[2px] w-3/4 blur-sm z-0" />
             <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-neutral-400 to-transparent h-px w-3/4 z-0" />
