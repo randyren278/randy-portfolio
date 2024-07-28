@@ -31,3 +31,24 @@ body {
     text-wrap: balance;
   }
 }
+
+
+.text-transparent {
+  color: transparent;
+}
+
+.bg-clip-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.bg-image-text {
+  background-image: url('/images/herogradient.png'); /* Set your image path here */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.font-sans {
+  font-family: sans-serif;
+}

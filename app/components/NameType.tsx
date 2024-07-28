@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -27,22 +26,9 @@ const NameType = () => {
           <div className="h-48 flex items-center justify-center">
             <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-7xl lg:leading-normal font-extrabold">
               <span className="text-white">I'm{" "}</span>
-              <TypeAnimation
-                sequence={[
-                  "Randy",
-                  isFirstLoad ? 2000 : 1000,
-                  "an engineering student",
-                  1000,
-                  "a full stack developer",
-                  1000,
-                  "a track athlete",
-                  1000,
-                ]}
-                wrapper="span"
-                speed={50}
-                repeat={Infinity}
-                className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-800"
-              />
+              <span className="text-transparent bg-clip-text bg-image-text">
+                Randy Ren
+              </span>
             </h1>
           </div>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
