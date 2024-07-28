@@ -4,6 +4,7 @@ import { Carousel, Card } from "./apple-cards-carousel"; // Adjust the import pa
 import Media from "./Media";
 import Image from "next/image";
 import Skill from "./Skill";
+import { motion } from "framer-motion";
 import { ReactNode } from "react";
 
 interface DummyContentProps {
@@ -46,10 +47,8 @@ const data = [
     src: "/images/carousel2.png", // Placeholder image, replace with your desired image
     content: (
       <DummyContent>
-        <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-xl font-sans max-w-3xl mx-auto">
-          Hi! My name is Randy and I'm currently a second-year student at the
-          University of British Columbia pursuing a Bachelor's degree in
-          Engineering. I also enjoy hackathons and run track and field.
+        <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-xl font-bold font-sans">
+          Hi! My name is Randy and I'm currently a second-year student at the University of British Columbia pursuing a Bachelor's degree in Engineering. I also enjoy hackathons and run track and field.
         </p>
       </DummyContent>
     ),
@@ -103,13 +102,13 @@ const data = [
     content: (
       <DummyContent>
         <div className="text-left">
-          <p className="text-neutral-600 dark:text-neutral-50 text-base md:text-xl font-sans font-extrabold">
+          <p className="text-[white] text-xl font-bold font-sans">
             University of British Columbia
           </p>
-          <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-xl font-sans">
+          <p className="text-[white] text-base font-sans">
             Bachelor&apos;s of Applied Science in Electrical Engineering
           </p>
-          <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-xl font-sans">
+          <p className="text-[white] text-base font-sans">
             Vancouver, BC, Canada · Sept 2023 - Apr 2027 (Expected)
           </p>
         </div>
@@ -125,9 +124,14 @@ const About: React.FC = () => {
 
   return (
     <div className="w-full h-full py-20">
-      <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans"
+      >
         Get to know me.
-      </h2>
+      </motion.h2>
       <Carousel items={cards} />
     </div>
   );
