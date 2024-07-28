@@ -24,7 +24,7 @@ const NameType = () => {
           transition={{ duration: 0.5 }}
           className="place-self-center"
         >
-          <div className="h-32 flex items-center justify-center">
+          <div className="h-48 flex items-center justify-center">
             <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-7xl lg:leading-normal font-extrabold">
               <span className="text-white">I'm{" "}</span>
               <TypeAnimation
