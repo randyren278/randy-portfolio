@@ -47,8 +47,6 @@ const NameType = () => {
           </div>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
             <span className="block">UBC Engineering 27'</span>
-            Hi, I'm Randy! I am an electrical engineering student at UBC and a
-            software developer that loves to innovate!
           </p>
           <div>
             <Link
