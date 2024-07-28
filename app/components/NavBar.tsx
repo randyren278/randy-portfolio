@@ -29,7 +29,7 @@ const Navbar = () => {
         <Link href={"/"} className="text-xl md:text-xl text-white font-semibold">
           Randy Ren
         </Link>
-        <div className="mobile-menu block">
+        <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (
             <button
               onClick={() => setNavbarOpen(true)}
@@ -45,6 +45,15 @@ const Navbar = () => {
               <XMarkIcon className="h-5 w-5" />
             </button>
           )}
+        </div>
+        <div className="menu hidden md:block md:w-auto" id="navbar">
+          <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
+            {navLinks.map((link, index) => (
+              <li key={index}>
+                <NavLink href={link.path} title={link.title} />
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
       {navbarOpen ? <MenuOverlay links={navLinks} /> : null}
