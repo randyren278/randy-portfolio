@@ -40,9 +40,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               animationSpeed={3}
               containerClassName="bg-black rounded-xl"
               colors={[
-                [236, 72, 153],
-                [232, 121, 249],
-                [231,76,60],
+                [84, 160, 255],
+
+                [72,219, 251], // Coral
               ]}
               dotSize={2}
             />
