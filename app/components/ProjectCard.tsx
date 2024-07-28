@@ -42,6 +42,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               colors={[
                 [236, 72, 153],
                 [232, 121, 249],
+                [231,76,60],
               ]}
               dotSize={2}
             />
