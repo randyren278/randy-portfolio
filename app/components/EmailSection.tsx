@@ -37,6 +37,18 @@ const EmailSection = () => {
       if (response.status === 200) {
         console.log("Message sent.");
         setEmailSubmitted(true);
+
+        // Clear the form inputs after a delay
+        setTimeout(() => {
+          target.email.value = "";
+          target.subject.value = "";
+          target.message.value = "";
+
+          // Switch back to "Send Message" after another delay
+          setTimeout(() => {
+            setEmailSubmitted(false);
+          }, 2000);
+        }, 2000); // Adjust the delay as needed
       } else {
         console.error("Failed to send message:", resData);
       }
@@ -62,66 +74,66 @@ const EmailSection = () => {
         </p>
       </div>
       <div>
-        {emailSubmitted ? (
-          <p className="text-green-500 text-sm mt-2">
-            Email sent successfully!
-          </p>
-        ) : (
-          <form className="flex flex-col" onSubmit={handleSubmit}>
-            <div className="mb-6">
-              <label
-                htmlFor="email"
-                className="text-white block mb-2 text-sm font-medium"
-              >
-                Your email
-              </label>
-              <input
-                name="email"
-                type="email"
-                id="email"
-                required
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="abc@email.com"
-              />
-            </div>
-            <div className="mb-6">
-              <label
-                htmlFor="subject"
-                className="text-white block text-sm mb-2 font-medium"
-              >
-                Subject
-              </label>
-              <input
-                name="subject"
-                type="text"
-                id="subject"
-                required
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Just saying hi"
-              />
-            </div>
-            <div className="mb-6">
-              <label
-                htmlFor="message"
-                className="text-white block text-sm mb-2 font-medium"
-              >
-                Message
-              </label>
-              <textarea
-                name="message"
-                id="message"
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Let's talk about..."
-              />
-            </div>
-            <button
-              type="submit"
-              className="bg-gradient-to-br from-blue-800 to-purple-600 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-800 text-white font-medium py-2.5 px-5 rounded-lg w-full"
+        <form className="flex flex-col" onSubmit={handleSubmit}>
+          <div className="mb-6">
+            <label
+              htmlFor="email"
+              className="text-white block mb-2 text-sm font-medium"
             >
-              Send Message
-            </button>
-          </form>
-        )}
+              Your email
+            </label>
+            <input
+              name="email"
+              type="email"
+              id="email"
+              required
+              className={`bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-sm rounded-lg block w-full p-2.5 transition-colors duration-1000 ${
+                emailSubmitted ? "text-transparent" : "text-gray-100"
+              }`}
+              placeholder="abc@email.com"
+            />
+          </div>
+          <div className="mb-6">
+            <label
+              htmlFor="subject"
+              className="text-white block text-sm mb-2 font-medium"
+            >
+              Subject
+            </label>
+            <input
+              name="subject"
+              type="text"
+              id="subject"
+              required
+              className={`bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-sm rounded-lg block w-full p-2.5 transition-colors duration-1000 ${
+                emailSubmitted ? "text-transparent" : "text-gray-100"
+              }`}
+              placeholder="Just saying hi"
+            />
+          </div>
+          <div className="mb-6">
+            <label
+              htmlFor="message"
+              className="text-white block text-sm mb-2 font-medium"
+            >
+              Message
+            </label>
+            <textarea
+              name="message"
+              id="message"
+              className={`bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-sm rounded-lg block w-full p-2.5 transition-colors duration-1000 ${
+                emailSubmitted ? "text-transparent" : "text-gray-100"
+              }`}
+              placeholder="Let's talk about..."
+            />
+          </div>
+          <button
+            type="submit"
+            className="bg-gradient-to-br from-blue-800 to-purple-600 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-800 text-white font-medium py-2.5 px-5 rounded-lg w-full transition-opacity duration-1000"
+          >
+            {emailSubmitted ? "Message sent!" : "Send Message"}
+          </button>
+        </form>
       </div>
     </section>
   );
