@@ -46,17 +46,17 @@ const TAB_DATA = [
     id: "education",
     content: (
       <div className="text-left">
-        <p className="text-[white] text-2xl tracking-wider">
+        <p className="text-[white] text-xl font-bold">
           University of British Columbia
         </p>
         <p className="text-[white] text-base">
           Bachelor&apos;s of Applied Science in Electrical Engineering
         </p>
-        <p className="text-[white]">
+        <p className="text-[white] text-base">
           Vancouver, BC, Canada · Sept 2023 - Apr 2027 (Expected)
         </p>
       </div>
-    ),
+    )
   },
 ];
 
