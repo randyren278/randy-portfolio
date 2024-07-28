@@ -40,7 +40,7 @@ const projectsData = [
     description: "This application is a personal portfolio website, showcasing skills, projects, and background. This full-stack application features an interative and visually appealing design.",
     image: "/images/5.png",
     gitUrl: "https://github.com/randyren278/randy-portfolio.git",
-    previewUrl: "/",
+    previewUrl: "https://randyren.vercel.app/",
   },
   {
     id: 6,
