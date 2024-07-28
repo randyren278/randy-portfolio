@@ -32,13 +32,7 @@ const NameType = () => {
               </span>
             </h1>
           </div>
-          <div className="relative w-full max-w-[40rem] h-40 mt-[-4.25rem] mb-10">
-            {/* Gradients */}
-            <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-neutral-400 to-transparent h-[2px] w-3/4 blur-sm z-0" />
-            <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-neutral-400 to-transparent h-px w-3/4 z-0" />
-            <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-neutral-500 to-transparent h-[5px] w-1/4 blur-sm z-0" />
-            <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-neutral-500 to-transparent h-px w-1/4 z-0" />
-
+          <div className="relative w-full max-w-[40rem] h-40 mt-[-4.55rem] mb-10">
             {/* Core component */}
             <SparklesCore
               background="transparent"
