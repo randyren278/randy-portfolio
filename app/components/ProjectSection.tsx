@@ -65,20 +65,19 @@ const ProjectsSection: React.FC = () => {
 
   useEffect(() => {
     if (isInView) {
-      const specialIndexes = [ 0, 1, 2, 3, 4, 5, 6,7];
       let currentIndex = -1;
       const interval = setInterval(() => {
-        setRevealedIndex(currentIndex);
         currentIndex += 1;
-        if (currentIndex >= projectsData.length) {
+        if (currentIndex >= 6) {
           currentIndex = -1; // Reset to loop
-          setFirstTrigger(false); // Ensure subsequent loops have the delay
         }
-      }, (currentIndex === -1 && firstTrigger) ? 2000 : specialIndexes.includes(currentIndex) && firstTrigger ? 2500 : 2500);
+        setRevealedIndex(currentIndex);
+      }, 2425); 
   
       return () => clearInterval(interval);
     }
   }, [isInView, firstTrigger]);
+  
   
 
   const cardVariants = {
