@@ -26,6 +26,10 @@ const NameType = () => {
     }; // Cleanup the timer and event listener on unmount
   }, []);
 
+  const maskImageStyle = isSmallScreen
+    ? { WebkitMaskImage: "radial-gradient(200px 100px at top, transparent 20%, white)" }
+    : { WebkitMaskImage: "radial-gradient(350px 200px at top, transparent 20%, white)" };
+
   return (
     <section className="lg:py-16 flex flex-col items-center justify-center font-sans">
       <div className="grid grid-cols-1 text-center">
@@ -38,27 +42,25 @@ const NameType = () => {
           <div className="h-48 flex items-center justify-center relative">
             <h1 className="text-white mb-4 text-4xl sm:text-4xl lg:text-7xl lg:leading-normal font-extrabold z-10">
               <span className="text-white">I'm </span>
-              <span className="text-transparent bg-clip-text bg-image-text"style={{ filter: "brightness(1.8) contrast(1.5)" }}>
+              <span className="text-transparent bg-clip-text bg-image-text" style={{ filter: "brightness(1.8) contrast(1.5)" }}>
                 Randy Ren
               </span>
             </h1>
           </div>
-          {!isSmallScreen && (
-            <div className="relative w-full max-w-[40rem] h-40 mt-[-4.55rem] mb-10">
-              {/* Core component */}
-              <SparklesCore
-                background="transparent"
-                minSize={0.4}
-                maxSize={1}
-                particleDensity={1200}
-                className="w-full h-full z-0"
-                particleColor="#FFFFFF"
-              />
+          <div className={`relative w-full ${isSmallScreen ? 'max-w-xs' : 'max-w-[40rem]'} h-40 mt-[-4.55rem] mb-10`}>
+            {/* Core component */}
+            <SparklesCore
+              background="transparent"
+              minSize={0.4}
+              maxSize={1}
+              particleDensity={1200}
+              className="w-full h-full z-0"
+              particleColor="#FFFFFF"
+            />
 
-              {/* Radial Gradient to prevent sharp edges */}
-              <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)] z-0"></div>
-            </div>
-          )}
+            {/* Radial Gradient to prevent sharp edges */}
+            <div className="absolute inset-0 w-full h-full bg-black" style={maskImageStyle}></div>
+          </div>
           <p className="text-neutral-300 text-base sm:text-lg mb-6 lg:text-0xl">
             <span className="block">UBC Engineering 27'</span>
           </p>
