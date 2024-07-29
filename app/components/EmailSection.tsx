@@ -91,7 +91,7 @@ const EmailSection = () => {
               type="email"
               id="email"
               required
-              className={`bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-sm rounded-lg block w-full p-2.5 transition-opacity duration-500 opacity-100`}
+              className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-white text-sm rounded-lg block w-full p-2.5 transition-opacity duration-500 opacity-100"
               placeholder="abc@email.com"
             />
           </div>
@@ -107,7 +107,7 @@ const EmailSection = () => {
               type="text"
               id="subject"
               required
-              className={`bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-sm rounded-lg block w-full p-2.5 transition-opacity duration-500 opacity-100`}
+              className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-white text-sm rounded-lg block w-full p-2.5 transition-opacity duration-500 opacity-100"
               placeholder="Just saying hi"
             />
           </div>
@@ -121,7 +121,7 @@ const EmailSection = () => {
             <textarea
               name="message"
               id="message"
-              className={`bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-sm rounded-lg block w-full p-2.5 transition-opacity duration-500 opacity-100`}
+              className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-white text-sm rounded-lg block w-full p-2.5 transition-opacity duration-500 opacity-100"
               placeholder="Let's talk about..."
             />
           </div>
