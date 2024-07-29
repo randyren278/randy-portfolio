@@ -34,9 +34,9 @@ const NameType = () => {
     <section className="lg:py-16 flex flex-col items-center justify-center font-sans">
       <div className="grid grid-cols-1 text-center">
         <motion.div
-          initial={{ opacity: 0.8, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, scale: 0,filter: "brightness(1.8) contrast(1.5)" }}
+          animate={{ opacity: 1, scale: 1,filter: "brightness(1.8) contrast(1.5)" }}
+          transition={{ duration: 1.5, delay:1 }}
           className="place-self-center"
         >
           <div className="h-48 flex items-center justify-center relative">
@@ -48,15 +48,21 @@ const NameType = () => {
             </h1>
           </div>
           <div className={`relative w-full ${isSmallScreen ? 'max-w-xs' : 'max-w-[40rem]'} h-40 mt-[-4.55rem] mb-10`}>
-            {/* Core component */}
-            <SparklesCore
-              background="transparent"
-              minSize={0.4}
-              maxSize={1}
-              particleDensity={1200}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay:2 }}
               className="w-full h-full z-0"
-              particleColor="#FFFFFF"
-            />
+            >
+              <SparklesCore
+                background="transparent"
+                minSize={0.4}
+                maxSize={1}
+                particleDensity={1200}
+                className="w-full h-full"
+                particleColor="#FFFFFF"
+              />
+            </motion.div>
 
             {/* Radial Gradient to prevent sharp edges */}
             <div className="absolute inset-0 w-full h-full bg-black" style={maskImageStyle}></div>

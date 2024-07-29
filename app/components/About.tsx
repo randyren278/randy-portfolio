@@ -4,8 +4,9 @@ import { Carousel, Card } from "./apple-cards-carousel"; // Adjust the import pa
 import Media from "./Media";
 import Image from "next/image";
 import Skill from "./Skill";
-import { motion } from "framer-motion";
+import { delay, easeOut, motion } from "framer-motion";
 import { ReactNode } from "react";
+
 
 interface DummyContentProps {
   children: ReactNode;
@@ -127,12 +128,18 @@ const About: React.FC = () => {
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+        transition={{ duration: 0.5, ease: "easeOut",delay:1 }}
         className="max-w-7xl pl-4 mx-auto text-3xl md:text-5xl font-bold text-neutral-200 font-sans"
       >
         Get to know me.
       </motion.h2>
-      <Carousel items={cards} />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.5, ease:"easeOut" }}
+      >
+        <Carousel items={cards} />
+      </motion.div>
     </div>
   );
 };
