@@ -61,7 +61,7 @@ const ProjectsSection: React.FC = () => {
     const interval = setInterval(() => {
       setRevealedIndex(currentIndex);
       currentIndex += 1;
-      if (currentIndex >= 6) {
+      if (currentIndex > 5) {
         currentIndex = -1; // Reset to loop
       }
     }, 2500); 
