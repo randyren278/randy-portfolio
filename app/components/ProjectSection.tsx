@@ -7,7 +7,7 @@ const projectsData = [
   {
     id: 1,
     title: "Weather App",
-    description: "A weather app with an intuitive and modern design, featuring real tile updates, 5-day forecast, and much more.",
+    description: "A weather app with an intuitive and modern design, featuring real-time updates, 5-day forecast, and much more.",
     image: "/images/1.png",
     gitUrl: "https://github.com/randyren278/weather-app.git",
     previewUrl: "https://randy-weather-app.vercel.app/",
@@ -15,7 +15,7 @@ const projectsData = [
   {
     id: 2,
     title: "Wordle App",
-    description: "A popular word guessing game with a built in solving algorithm.",
+    description: "A popular word guessing game with a built-in solving algorithm.",
     image: "/images/2.png",
     gitUrl: "https://github.com/randyren278/Wordle.git",
     previewUrl: "https://randy-eldrow.vercel.app/",
@@ -76,9 +76,14 @@ const ProjectsSection: React.FC = () => {
 
   return (
     <section id="projects">
-      <h2 className="max-w-7xl pl-4 mx-auto text-3xl md:text-5xl font-bold text-neutral-200 dark:text-neutral-200 mb-8 md:mb-12 font-sans">
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="max-w-7xl pl-4 mx-auto text-3xl md:text-5xl font-bold text-neutral-200 dark:text-neutral-200 mb-8 md:mb-12 font-sans"
+      >
         My Projects
-      </h2>
+      </motion.h2>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
         {projectsData.map((project, index) => (
           <motion.li
