@@ -57,11 +57,11 @@ const ProjectsSection: React.FC = () => {
   const [revealedIndex, setRevealedIndex] = useState<number>(-1);
 
   useEffect(() => {
-    let currentIndex = 0;
+    let currentIndex = -1;
     const interval = setInterval(() => {
       setRevealedIndex(currentIndex);
       currentIndex += 1;
-      if (currentIndex >= projectsData.length) {
+      if (currentIndex >= 6) {
         currentIndex = -1; // Reset to loop
       }
     }, 2500); 
