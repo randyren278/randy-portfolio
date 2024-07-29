@@ -27,14 +27,14 @@ const NameType = () => {
   }, []);
 
   const maskImageStyle = isSmallScreen
-    ? { WebkitMaskImage: "radial-gradient(200px 100px at top, transparent 20%, white)" }
+    ? { WebkitMaskImage: "radial-gradient(175px 100px at top, transparent 20%, white)" }
     : { WebkitMaskImage: "radial-gradient(350px 200px at top, transparent 20%, white)" };
 
   return (
     <section className="lg:py-16 flex flex-col items-center justify-center font-sans">
       <div className="grid grid-cols-1 text-center">
         <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
+          initial={{ opacity: 0.8, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
           className="place-self-center"
