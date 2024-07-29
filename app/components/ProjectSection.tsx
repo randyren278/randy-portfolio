@@ -57,16 +57,16 @@ const ProjectsSection: React.FC = () => {
   const [revealedIndex, setRevealedIndex] = useState<number>(-1);
 
   useEffect(() => {
-    if (isInView) {
-      let currentIndex = 0;
-      const interval = setInterval(() => {
-        setRevealedIndex(currentIndex);
-        currentIndex += 1;
-        if (currentIndex >= projectsData.length) {
-          clearInterval(interval);
-        }
-      }, 2500); 
-    }
+    let currentIndex = 0;
+    const interval = setInterval(() => {
+      setRevealedIndex(currentIndex);
+      currentIndex += 1;
+      if (currentIndex >= projectsData.length) {
+        currentIndex = -1; // Reset to loop
+      }
+    }, 2500); 
+
+    return () => clearInterval(interval);
   }, [isInView]);
 
   const cardVariants = {
