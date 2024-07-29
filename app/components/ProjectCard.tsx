@@ -26,7 +26,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="border border-black/[0.2] group/canvas-card flex flex-col justify-between dark:border-white/[0.2] max-w-sm w-full mx-auto p-4 rounded-xl relative h-[30rem]"
+      className="border border-white/[0.2] group/canvas-card flex flex-col justify-between dark:border-white/[0.2] max-w-sm w-full mx-auto p-4 rounded-xl relative h-[30rem]"
     >
       <AnimatePresence>
         {hovered && (

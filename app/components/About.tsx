@@ -13,7 +13,7 @@ interface DummyContentProps {
 
 const DummyContent: React.FC<DummyContentProps> = ({ children }) => {
   return (
-    <div className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4">
+    <div className="bg-neutral-800 dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4">
       {children}
     </div>
   );
@@ -47,7 +47,7 @@ const data = [
     src: "/images/carousel2.png", // Placeholder image, replace with your desired image
     content: (
       <DummyContent>
-        <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-xl font-sans">
+        <p className="text-neutral-400 dark:text-neutral-400 text-base md:text-xl font-sans">
         Hi! My name is Randy, and I'm currently a second-year student at the University of British Columbia pursuing a Bachelor's degree in Electrical Engineering. I have a passion for developing innovative coding projects that solve real-world problems. I have experience working with various programming languages and frameworks, including Java, Python, C++, JavaScript, and React. Beyond coding, I am involved in track and field and love the outdoors.
         </p>
       </DummyContent>
@@ -102,13 +102,13 @@ const data = [
     content: (
       <DummyContent>
         <div className="text-left">
-          <p className="text-neutral-600 dark:text-neutral-50 md:text-xl font-bold font-sans">
+          <p className="text-neutral-50 dark:text-neutral-50 md:text-xl font-bold font-sans">
             University of British Columbia
           </p>
-          <p className="text-neutral-600 dark:text-neutral-400 md:text-xl font-sans">
+          <p className="text-neutral-400 dark:text-neutral-400 md:text-xl font-sans">
             Bachelor&apos;s of Applied Science in Electrical Engineering
           </p>
-          <p className="text-neutral-600 dark:text-neutral-400 md:text-xl font-sans">
+          <p className="text-neutral-400 dark:text-neutral-400 md:text-xl font-sans">
             Vancouver, BC, Canada · Sept 2023 - Apr 2027 (Expected)
           </p>
         </div>
@@ -128,7 +128,7 @@ const About: React.FC = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="max-w-7xl pl-4 mx-auto text-3xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans"
+        className="max-w-7xl pl-4 mx-auto text-3xl md:text-5xl font-bold text-neutral-200 font-sans"
       >
         Get to know me.
       </motion.h2>
