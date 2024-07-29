@@ -6,13 +6,24 @@ import { SparklesCore } from "./sparkles";
 
 const NameType = () => {
   const [isFirstLoad, setIsFirstLoad] = useState(true);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsFirstLoad(false);
     }, 2000); // After 2 seconds, change isFirstLoad to false
 
-    return () => clearTimeout(timer); // Cleanup the timer on unmount
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 640);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("resize", handleResize);
+    }; // Cleanup the timer and event listener on unmount
   }, []);
 
   return (
@@ -32,20 +43,22 @@ const NameType = () => {
               </span>
             </h1>
           </div>
-          <div className="relative w-full max-w-[40rem] h-40 mt-[-4.55rem] mb-10">
-            {/* Core component */}
-            <SparklesCore
-              background="transparent"
-              minSize={0.4}
-              maxSize={1}
-              particleDensity={1200}
-              className="w-full h-full z-0"
-              particleColor="#FFFFFF"
-            />
+          {!isSmallScreen && (
+            <div className="relative w-full max-w-[40rem] h-40 mt-[-4.55rem] mb-10">
+              {/* Core component */}
+              <SparklesCore
+                background="transparent"
+                minSize={0.4}
+                maxSize={1}
+                particleDensity={1200}
+                className="w-full h-full z-0"
+                particleColor="#FFFFFF"
+              />
 
-            {/* Radial Gradient to prevent sharp edges */}
-            <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)] z-0"></div>
-          </div>
+              {/* Radial Gradient to prevent sharp edges */}
+              <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)] z-0"></div>
+            </div>
+          )}
           <p className="text-neutral-300 text-base sm:text-lg mb-6 lg:text-0xl">
             <span className="block">UBC Engineering 27'</span>
           </p>
