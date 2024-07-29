@@ -26,7 +26,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   useEffect(() => {
     if (revealed) {
       setHovered(true);
-      const timer = setTimeout(() => setHovered(false), 1500); // 1.5 seconds hold
+      const timer = setTimeout(() => setHovered(false), 2000); 
       return () => clearTimeout(timer);
     }
   }, [revealed]);

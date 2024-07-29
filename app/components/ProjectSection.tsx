@@ -72,7 +72,7 @@ const ProjectsSection: React.FC = () => {
           currentIndex = -1; // Reset to loop
         }
         setRevealedIndex(currentIndex);
-      }, 2425); 
+      }, 2500); 
   
       return () => clearInterval(interval);
     }
