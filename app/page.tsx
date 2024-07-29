@@ -4,6 +4,8 @@ import About from "./components/About";
 import ProjectsSection from "./components/ProjectSection";
 import Footer from "./components/Footer";
 import EmailSection from "./components/EmailSection";
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export default function Home() {
   return (
@@ -20,6 +22,8 @@ export default function Home() {
           <Footer/>
         </footer>
       </div>
+      <Analytics/>
+      <SpeedInsights/>
     </main>
   );
 }
