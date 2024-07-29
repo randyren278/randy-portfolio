@@ -37,9 +37,10 @@ export const CarouselContext = createContext<{
 });
 
 export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
-  const carouselRef = React.useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = React.useState(false);
-  const [canScrollRight, setCanScrollRight] = React.useState(true);
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -58,21 +59,23 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
   };
 
   const scrollLeft = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -300, behavior: "smooth" });
+    if (carouselRef.current && cardRefs.current[currentIndex]) {
+      const cardWidth = cardRefs.current[currentIndex]?.offsetWidth || 300;
+      carouselRef.current.scrollBy({ left: -cardWidth, behavior: "smooth" });
     }
   };
 
   const scrollRight = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
+    if (carouselRef.current && cardRefs.current[currentIndex]) {
+      const cardWidth = cardRefs.current[currentIndex]?.offsetWidth || 300;
+      carouselRef.current.scrollBy({ left: cardWidth, behavior: "smooth" });
     }
   };
 
   const handleCardClose = (index: number) => {
-    if (carouselRef.current) {
-      const cardWidth = isMobile() ? 230 : 384; // (md:w-96)
-      const gap = isMobile() ? 4 : 8;
+    if (carouselRef.current && cardRefs.current[index]) {
+      const cardWidth = cardRefs.current[index]?.offsetWidth || 300;
+      const gap = parseInt(getComputedStyle(cardRefs.current[index]!).marginRight, 10) || 8;
       const scrollPosition = (cardWidth + gap) * (index + 1);
       carouselRef.current.scrollTo({
         left: scrollPosition,
@@ -80,10 +83,6 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
       });
       setCurrentIndex(index);
     }
-  };
-
-  const isMobile = () => {
-    return window && window.innerWidth < 768;
   };
 
   return (
@@ -125,6 +124,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                   },
                 }}
                 key={"card" + index}
+                ref={(el) => { cardRefs.current[index] = el; }}
                 className="last:pr-[5%] md:last:pr-[33%]  rounded-3xl"
               >
                 {item}
