@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ProjectCard from "./ProjectCard";
 import { motion, useInView } from "framer-motion";
 
@@ -15,7 +15,7 @@ const projectsData = [
   {
     id: 2,
     title: "Wordle App",
-    description: "A popular word guessing game with a built in solving algorithim",
+    description: "A popular word guessing game with a built in solving algorithm.",
     image: "/images/2.png",
     gitUrl: "https://github.com/randyren278/Wordle.git",
     previewUrl: "https://randy-eldrow.vercel.app/",
@@ -37,7 +37,7 @@ const projectsData = [
   {
     id: 5,
     title: "Portfolio",
-    description: "This application is a personal portfolio website, showcasing skills, projects, and background. This full-stack application features an interative and visually appealing design.",
+    description: "This application is a personal portfolio website, showcasing skills, projects, and background. This full-stack application features an interactive and visually appealing design.",
     image: "/images/5.png",
     gitUrl: "https://github.com/randyren278/randy-portfolio.git",
     previewUrl: "https://randyren.vercel.app/",
@@ -54,6 +54,20 @@ const projectsData = [
 const ProjectsSection: React.FC = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  const [revealedIndex, setRevealedIndex] = useState<number>(-1);
+
+  useEffect(() => {
+    if (isInView) {
+      let currentIndex = 0;
+      const interval = setInterval(() => {
+        setRevealedIndex(currentIndex);
+        currentIndex += 1;
+        if (currentIndex >= projectsData.length) {
+          clearInterval(interval);
+        }
+      }, 2500); 
+    }
+  }, [isInView]);
 
   const cardVariants = {
     initial: { y: 50, opacity: 0 },
@@ -62,7 +76,7 @@ const ProjectsSection: React.FC = () => {
 
   return (
     <section id="projects">
-      <h2 className="max-w-7xl pl-4 mx-auto text-3xl md:text-5xl font-bold text-neutral-200 dark:text-neutral-200 mb-8 md:mb-12 font-sans">
+      <h2 className="max-w-7xl pl-4 mx-auto text-3xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 mb-8 md:mb-12 font-sans">
         My Projects
       </h2>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
@@ -80,6 +94,7 @@ const ProjectsSection: React.FC = () => {
               description={project.description}
               gitUrl={project.gitUrl}
               previewUrl={project.previewUrl}
+              revealed={index <= revealedIndex}
             />
           </motion.li>
         ))}

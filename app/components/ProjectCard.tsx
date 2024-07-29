@@ -1,5 +1,4 @@
-// src/components/ProjectCard.tsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faGlobeAmericas } from "@fortawesome/free-solid-svg-icons"; // Updated globe icon
@@ -12,6 +11,7 @@ type ProjectCardProps = {
   description: string;
   gitUrl: string;
   previewUrl?: string;
+  revealed: boolean;
 };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -19,8 +19,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   gitUrl,
   previewUrl,
+  revealed,
 }) => {
   const [hovered, setHovered] = useState(false);
+
+  useEffect(() => {
+    if (revealed) {
+      setHovered(true);
+      const timer = setTimeout(() => setHovered(false), 1500); // 1.5 seconds hold
+      return () => clearTimeout(timer);
+    }
+  }, [revealed]);
 
   return (
     <div
@@ -41,8 +50,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               containerClassName="bg-black rounded-xl"
               colors={[
                 [84, 160, 255],
-
-                [72,219, 251], 
+                [72, 219, 251],
               ]}
               dotSize={2}
             />
@@ -55,17 +63,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <p className="text-[#ADB7BE]">{description}</p>
       </div>
       <div className="relative z-20 mt-4 flex justify-center gap-4">
-        <Link
-          href={gitUrl}
-          className="text-[#ADB7BE] hover:text-white"
-        >
+        <Link href={gitUrl} className="text-[#ADB7BE] hover:text-white">
           <FontAwesomeIcon icon={faGithub} size="2x" />
         </Link>
         {previewUrl && (
-          <Link
-            href={previewUrl}
-            className="text-[#ADB7BE] hover:text-white"
-          >
+          <Link href={previewUrl} className="text-[#ADB7BE] hover:text-white">
             <FontAwesomeIcon icon={faGlobeAmericas} size="2x" />
           </Link>
         )}
