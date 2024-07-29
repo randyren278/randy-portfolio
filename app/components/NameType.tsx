@@ -38,7 +38,7 @@ const NameType = () => {
           <div className="h-48 flex items-center justify-center relative">
             <h1 className="text-white mb-4 text-4xl sm:text-4xl lg:text-7xl lg:leading-normal font-extrabold z-10">
               <span className="text-white">I'm </span>
-              <span className="text-transparent bg-clip-text bg-image-text">
+              <span className="text-transparent bg-clip-text bg-image-text"style={{ filter: "brightness(1.8) contrast(1.5)" }}>
                 Randy Ren
               </span>
             </h1>
