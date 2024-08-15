@@ -9,7 +9,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col bg-black/[0.96] antialiased bg-grid-white/[0.02]">
+    <main className="flex min-h-screen flex-col bg-black antialiased bg-grid-white/[0.02]">
       <NavBar />
       <div className="mt-24 container mx-auto py-4 px-12">
         <NameType />

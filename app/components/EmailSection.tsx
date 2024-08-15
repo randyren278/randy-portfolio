@@ -129,7 +129,7 @@ const EmailSection = () => {
             type="submit"
             className="inline-block py-0.5 px-0.5 rounded-full bg-gradient-to-br bg-neutral-400 hover:bg-neutral-200 hover:scale-105 transition-transform duration-200 text-white"
           >
-            <span className="block bg-[#121212] hover:bg-neutral-900 rounded-full px-5 py-2 text-center">
+            <span className="block bg-[black] hover:bg-neutral-900 rounded-full px-5 py-2 text-center">
               {buttonText}
             </span>
           </button>
