@@ -55,6 +55,15 @@ const projectsData = [
     image: "/images/6.png",
     gitUrl: "https://github.com/randyren278/CreditRiskAnalysis.git",
   },
+  {
+    id: 7,
+    title: "APSC Buddy",
+    description:
+      "A collection of helpful notes, resources, and practice for incoming first year engineering students at UBC.",
+    image: "/images/6.png",
+    gitUrl: "https://github.com/randyren278/ubc_apsc_y1",
+    previewUrl: "https://apscbuddy.vercel.app/",
+  },
 ];
 
 const ProjectsSection: React.FC = () => {
@@ -68,7 +77,7 @@ const ProjectsSection: React.FC = () => {
       let currentIndex = -1;
       const interval = setInterval(() => {
         currentIndex += 1;
-        if (currentIndex >= 6) {
+        if (currentIndex >= 7) {
           currentIndex = -1; // Reset to loop
         }
         setRevealedIndex(currentIndex);
