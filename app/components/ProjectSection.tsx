@@ -64,6 +64,14 @@ const projectsData = [
     gitUrl: "https://github.com/randyren278/ubc_apsc_y1",
     previewUrl: "https://apscbuddy.vercel.app/",
   },
+  {
+    id: 8,
+    title: "Dissertation on Kuwait ",
+    description:
+      "Exploring the integration of renewable energy into Kuwait's desalination sector to reduce dependency on fossil fuels and promote environmental sustainability.",
+    image: "/images/6.png",
+    attachmentUrl:"/Dissertation on Renewable Energy in Kuwait.pdf",
+  },
 ];
 
 const ProjectsSection: React.FC = () => {
@@ -77,7 +85,7 @@ const ProjectsSection: React.FC = () => {
       let currentIndex = -1;
       const interval = setInterval(() => {
         currentIndex += 1;
-        if (currentIndex >= 7) {
+        if (currentIndex >= 8) {
           currentIndex = -1; // Reset to loop
         }
         setRevealedIndex(currentIndex);
@@ -111,7 +119,7 @@ const ProjectsSection: React.FC = () => {
             variants={cardVariants}
             initial="initial"
             animate={isInView ? "animate" : "initial"}
-            transition={{ duration: 2.5, delay: index * 0.4 }}
+            transition={{ duration: 1.75, delay: index * 0.4 }}
           >
             <ProjectCard
               key={project.id}
@@ -119,6 +127,7 @@ const ProjectsSection: React.FC = () => {
               description={project.description}
               gitUrl={project.gitUrl}
               previewUrl={project.previewUrl}
+              attachmentUrl={project.attachmentUrl}
               revealed={index <= revealedIndex}
             />
           </motion.li>
