@@ -81,7 +81,7 @@ const NameType = () => {
               </span>
             </Link>
             <Link
-              href="/randyresume.pdf" // Update this with your resume link
+              href="/randy.resume.pdf" // Update this with your resume link
               className="inline-block py-0.5 px-0.5 rounded-full bg-gradient-to-br bg-neutral-400 hover:bg-neutral-200 hover:scale-105 transition-transform duration-200 text-white"
               style={{ width: "100px" }}
             >
