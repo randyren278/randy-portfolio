@@ -34,15 +34,18 @@ const NameType = () => {
     <section className="lg:py-16 flex flex-col items-center justify-center font-sans">
       <div className="grid grid-cols-1 text-center">
         <motion.div
-          initial={{ opacity: 0, scale: 0,filter: "brightness(1.8) contrast(1.5)" }}
-          animate={{ opacity: 1, scale: 1,filter: "brightness(1.8) contrast(1.5)" }}
-          transition={{ duration: 1.5, delay:1 }}
+          initial={{ opacity: 0, scale: 0, filter: "brightness(1.8) contrast(1.5)" }}
+          animate={{ opacity: 1, scale: 1, filter: "brightness(1.8) contrast(1.5)" }}
+          transition={{ duration: 1.5, delay: 1 }}
           className="place-self-center"
         >
           <div className="h-48 flex items-center justify-center relative">
             <h1 className="text-white mb-4 text-4xl sm:text-4xl lg:text-7xl lg:leading-normal font-extrabold z-10">
               <span className="text-white">I'm </span>
-              <span className="text-transparent bg-clip-text bg-image-text" style={{ filter: "brightness(1.8) contrast(1.5)" }}>
+              <span
+                className="text-transparent bg-clip-text bg-image-text"
+                style={{ filter: "brightness(1.8) contrast(1.5)" }}
+              >
                 Randy Ren
               </span>
             </h1>
@@ -51,7 +54,7 @@ const NameType = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay:2 }}
+              transition={{ duration: 1, delay: 2 }}
               className="w-full h-full z-0"
             >
               <SparklesCore
@@ -70,7 +73,7 @@ const NameType = () => {
           <p className="text-neutral-300 text-base sm:text-lg mb-6 lg:text-0xl">
             <span className="block">UBC Engineering 27'</span>
           </p>
-          <div className="flex flex-row items-center justify-center gap-4">
+          <div className="flex flex-row items-center justify-center">
             <Link
               href="mailto:randyren278@gmail.com"
               className="inline-block py-0.5 px-0.5 rounded-full bg-gradient-to-br bg-neutral-400 hover:bg-neutral-200 hover:scale-105 transition-transform duration-200 text-white"
@@ -78,15 +81,6 @@ const NameType = () => {
             >
               <span className="block bg-[black] hover:bg-neutral-900 rounded-full px-5 py-2 text-center">
                 Hire Me
-              </span>
-            </Link>
-            <Link
-              href="/randy.resume.pdf" // Update this with your resume link
-              className="inline-block py-0.5 px-0.5 rounded-full bg-gradient-to-br bg-neutral-400 hover:bg-neutral-200 hover:scale-105 transition-transform duration-200 text-white"
-              style={{ width: "100px" }}
-            >
-              <span className="block bg-[black] hover:bg-neutral-900 rounded-full px-5 py-2 text-center">
-                Resume
               </span>
             </Link>
           </div>
