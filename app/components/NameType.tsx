@@ -70,9 +70,6 @@ const NameType = () => {
             {/* Radial Gradient to prevent sharp edges */}
             <div className="absolute inset-0 w-full h-full bg-black" style={maskImageStyle}></div>
           </div>
-          <p className="text-neutral-300 text-base sm:text-lg mb-6 lg:text-0xl">
-            <span className="block">UBC Engineering 27'</span>
-          </p>
           <div className="flex flex-row items-center justify-center">
             <Link
               href="mailto:randyren278@gmail.com"
