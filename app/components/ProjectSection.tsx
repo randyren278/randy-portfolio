@@ -57,15 +57,6 @@ const projectsData = [
   },
   {
     id: 7,
-    title: "APSC Buddy",
-    description:
-      "A collection of helpful notes, resources, and practice for incoming first year engineering students at UBC.",
-    image: "/images/6.png",
-    gitUrl: "https://github.com/randyren278/ubc_apsc_y1",
-    previewUrl: "https://apscbuddy.vercel.app/",
-  },
-  {
-    id: 8,
     title: "Dissertation on Kuwait ",
     description:
       "Exploring the integration of renewable energy into Kuwait's desalination sector to reduce dependency on fossil fuels and promote environmental sustainability.",
@@ -85,7 +76,7 @@ const ProjectsSection: React.FC = () => {
       let currentIndex = -1;
       const interval = setInterval(() => {
         currentIndex += 1;
-        if (currentIndex >= 8) {
+        if (currentIndex >= 7) {
           currentIndex = -1; // Reset to loop
         }
         setRevealedIndex(currentIndex);
