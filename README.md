@@ -1,3 +1,5 @@
+# 🚧 UNDER CONSTRUCTION: CHANGES COMING SOON 🚧
+
 # Randy's Portfolio
 
 ## Introduction
